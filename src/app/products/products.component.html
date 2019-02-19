@@ -1,0 +1,45 @@
+<div id="heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-content">
+          <h2>Menu</h2>
+          <!-- <span>Home / <a href="#">Menu</a></span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-section">
+          <div>
+            <h2>MENU</h2>
+            <img src="assets/img/under-heading.png" alt="">
+          </div>
+        </div>
+        <div class="row">
+          
+            <div *ngFor="let product of products" class="item col-md-6 col-sm-12 {{product.category}}">
+                <div class="item_row">
+                  <div class="label-text item_col_fixed">
+                    <app-modal-simple #mymodal (result)="onModalClose($event)"></app-modal-simple>
+                    <a (click)="mymodal.open(product.imagePath)" style="cursor:pointer">
+                      <!-- href="{{product.imagePath}}" -->
+                      <h3>{{product.name}}
+                        <i class="fa fa-camera"></i>
+                      </h3>
+                    </a>
+                  </div>
+                  <div class="text-category item_col_flex">Rp {{product.price}}</div>
+                </div>
+                <div class="item_desc">{{product.description}}</div>
+              </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

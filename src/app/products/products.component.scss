@@ -1,0 +1,31 @@
+.item
+{
+  height: 125px;
+}
+
+.item_row
+{
+    display: flex; /* equal height of the children */
+
+    .item_col_fixed
+    {
+      width: 80%;
+    }
+
+    .item_col_flex
+    {
+      flex: 1; /* additionally, equal width */
+      margin-top: 7px;
+      font-style: italic;
+    }
+}
+
+.item_desc
+{
+  margin-top: 10px;
+}
+
+.clearfix
+{
+  padding-left: 0px;
+}
