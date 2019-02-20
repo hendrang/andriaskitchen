@@ -7,17 +7,16 @@ import { DataStorageService } from '../shared/data-storage.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default
+  styleUrls: ['./products.component.scss']
 })
+
 export class ProductsComponent implements OnInit {
 
   products: Product[];
   productsChangedSubscription: Subscription;
   productsSubscription: Subscription;
   modalCloseResult: string;
-  errorsMessage: string;
-  loading = false;
+  categoryFilter: string;
 
   constructor(private productsService: ProductsService, private dataStorageService: DataStorageService) { }
 
@@ -32,6 +31,10 @@ export class ProductsComponent implements OnInit {
       .subscribe((products: Product[]) => {
         this.products = products;
       });
+  }
+
+  categorize(categoryFilter: string) {
+    this.categoryFilter = categoryFilter;
   }
 
   onModalClose(reason: string) {

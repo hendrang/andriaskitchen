@@ -11,7 +11,7 @@ import { Product } from "./product.model";
 export class ProductsService implements OnInit {
     productsChanged = new Subject<Product[]>();
 
-    private _productUrl = 'https://andriaskitchen-141103.firebaseio.com/products.json';
+    private _productUrl = 'https://andriaskitchen-ak1.firebaseio.com/products.json';
     private products: Product[];
 
     // private products: Product[] = [

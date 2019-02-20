@@ -11,6 +11,8 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsService } from './products/products.service';
 import { ModalSimpleComponent } from './shared/modal-simple/modal-simple.component';
 import { DataStorageService } from './shared/data-storage.service';
+import { CategoryFilterPipe } from './shared/category-filter.pipe';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DataStorageService } from './shared/data-storage.service';
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    ModalSimpleComponent    
+    ModalSimpleComponent,
+    CategoryFilterPipe,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

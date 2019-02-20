@@ -19,7 +19,7 @@ export class DataStorageService {
         //const token = this.authService.getToken();
         // return this.productsService.getProducts();
 
-        return this.http.get('https://andriaskitchen-141103.firebaseio.com/products.json')
+        return this.http.get('https://andriaskitchen-ak1.firebaseio.com/products.json')
             .pipe(map(
                 response => {
                     return response;
@@ -31,7 +31,7 @@ export class DataStorageService {
                 }
             );
 
-        // return this.http.get('https://andriaskitchen-141103.firebaseio.com/products.json')
+        // return this.http.get('https://andriaskitchen-ak1.firebaseio.com/products.json')
         // .pipe(map(
         //     (response: Response) => {
         //         const products: Product[] = response.json();

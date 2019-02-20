@@ -19,10 +19,18 @@
             <h2>MENU</h2>
             <img src="assets/img/under-heading.png" alt="">
           </div>
+          <div>
+            <ul id="filters" class="clearfix">
+              <li><span class="filter" (click)="categorize('')">All</span></li>
+              <li><span class="filter" (click)="categorize('indonesian')">Indonesian</span></li>
+              <li><span class="filter" (click)="categorize('italian')">Italian</span></li>
+              <li><span class="filter" (click)="categorize('japanese')">Japanese</span></li>
+            </ul>
+          </div>
         </div>
         <div class="row">
           
-            <div *ngFor="let product of products" class="item col-md-6 col-sm-12 {{product.category}}">
+            <div *ngFor="let product of products | categoryFilter: categoryFilter" class="item col-md-6 col-sm-12 {{product.category}}">
                 <div class="item_row">
                   <div class="label-text item_col_fixed">
                     <app-modal-simple #mymodal (result)="onModalClose($event)"></app-modal-simple>

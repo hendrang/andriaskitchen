@@ -1,21 +1,17 @@
 .navbar-collapse {
-    text-align:center;
-  }
-  
-  .navbar-nav {
-      display:inline-block;
-      float:none;
-  }
-  
-  .navbar-default {
-      background-color: transparent;
-      border-color: transparent;   
-  }
-  
-  .main-menu ul li a:hover {
-    color: #f78e21;
-  }
-  
-  .address-bar a, .more-info a {
-    color: #666;
-  }
+  text-align:center;
+}
+
+.navbar-nav {
+    display:inline-block;
+    float:none;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;   
+}
+
+.address-bar a, .more-info a {
+  color: #666;
+}
