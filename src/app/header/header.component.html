@@ -19,6 +19,21 @@
               <li class="nav-item" routerLinkAcive="active">
                 <a class="nav-link" routerLink="/about">About</a>
               </li>
+              <li class="nav-item" routerLinkAcive="active" *ngIf="isAuthenticated()">
+                <a class="nav-link" routerLink="/admin">Admin</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <ng-template [ngIf]="!isAuthenticated()">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/signup">Register</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/signin">Log In</a>
+                </li>
+              </ng-template>
+              <li class="nav-item">
+                <a class="nav-link" style="cursor: pointer;" (click)="onLogout()" *ngIf="isAuthenticated()">Logout</a>
+              </li>
             </ul>
           </nav>
         </div>

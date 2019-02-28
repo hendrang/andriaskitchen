@@ -5,6 +5,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 
 
 import { Product } from "./product.model";
+import { AuthService } from '../auth/auth.service';
 
 
 @Injectable()
@@ -21,7 +22,7 @@ export class ProductsService implements OnInit {
     //     new Product('japanese', 'Handroll 2', '60.000', '2 hand roll grilled salmon and organic vegetables','https://www.dropbox.com/s/m6mj1v8zuwo8dgo/P2_Handroll2.jpg?raw=1', true)
     // ]
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private authService: AuthService) { }
 
     ngOnInit() {
         // this.http.get(this._productUrl)
@@ -64,10 +65,19 @@ export class ProductsService implements OnInit {
         this.productsChanged.next(this.products.slice());
     }
 
-    updateProduct(index: number, newRecipe: Product) {
-        this.products[index] = newRecipe;
-        this.productsChanged.next(this.products.slice());
+    updateProducts(products: Product[]) {
+        const token = this.authService.getToken();
+        return this.http.put<Product[]>(this._productUrl + '?auth=' + token, products)
+        .subscribe((products: Product[]) => {
+            alert("Update SUCCESS");
+            this.productsChanged.next(products);
+        }); 
     }
+
+    // updateProduct(index: number, newRecipe: Product) {
+    //     this.products[index] = newRecipe;
+    //     this.productsChanged.next(this.products.slice());
+    // }
 
     deleteProduct(index: number) {
         this.products.splice(index, 1);

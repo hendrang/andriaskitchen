@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-12">
+    <div>
+      <div class="row justify-content-center">
+        <div class="row">
+        <div class="col-sm">
+          <button type="submit" class="btn btn-success" (click)="onSubmit()">Save</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      </div>
+      <div class="container">
+        <div *ngFor="let product of products">
+          <hr>
+          <div class="row justify-content-center">
+            <div class="row">
+              <div class="input-group mb-3 col-sm">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Category</span>
+                </div>
+                <input type="text" id="category" class="form-control" [(ngModel)]="product.category">
+              </div>
+              <div class="input-group mb-3 col-sm">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Nama</span>
+                </div>
+                <input type="text" id="name" class="form-control" [(ngModel)]="product.name">
+              </div>
+              <div class="input-group mb-3 col-sm">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Harga</span>
+                </div>
+                <input type="text" id="price" class="form-control" [(ngModel)]="product.price">
+              </div>
+            </div>
+            <div class="row col-sm-9">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Image URL</span>
+                </div>
+                <input type="text" id="imagePath" class="form-control" [(ngModel)]="product.imagePath">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Deskripsi</span>
+                </div>
+                <textarea rows="5" type="text" id="description" class="form-control"
+                  [(ngModel)]="product.description"></textarea>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
