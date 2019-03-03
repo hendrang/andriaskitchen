@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # andriaskitchen
 
 This is my attempt to migrate Andria's Kitchen from the Angular 2.0 to 7. There are more works to do, but I think I have my first 
